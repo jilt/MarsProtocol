@@ -1,5 +1,5 @@
-import { cosmos } from "@graphprotocol/graph-ts";
-import { TokenSwap, Token } from "../generated/schema";
+import { BigInt, cosmos } from "@graphprotocol/graph-ts";
+import { TokenSwap, Token, Block } from "../generated/schema";
 
 export function handleSwaps(data: cosmos.EventData): void {
   const height = data.block.header.height;
@@ -13,6 +13,18 @@ export function handleSwaps(data: cosmos.EventData): void {
   swap.tokenOut = saveToken(`${height}-${sender}-out`, data.event.getAttributeValue("tokens_out"));
 
   swap.save();
+}
+
+export function handleBlock(bl: cosmos.Block): void {
+  const hash = bl.header.hash.toHexString();
+  const height = BigInt.fromString(bl.header.height.toString());
+
+  const block = new Block(hash);
+
+  block.number = height;
+  block.timestamp = BigInt.fromString(bl.header.time.seconds.toString());
+
+  block.save();
 }
 
 function saveToken(id: string, data: string): string {

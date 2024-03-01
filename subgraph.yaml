@@ -15,7 +15,10 @@ dataSources:
       entities:
         - TokenSwap
         - Token
+        - Block
       eventHandlers:
         - event: token_swapped
           handler: handleSwaps
+      blockHandlers:
+        - handler: handleBlock
       file: ./src/mapping.ts

@@ -11,3 +11,9 @@ type TokenSwap @entity {
   tokenIn: Token
   tokenOut: Token
 }
+
+type Block @entity {
+  id: ID!
+  number: BigInt
+  timestamp: BigInt
+}

@@ -6,11 +6,11 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "create-local": "graph create osmosis-token-swaps --node http://0.0.0.0:8020",
-    "deploy-local": "graph deploy osmosis-token-swaps -l v0.1.0 --ipfs http://0.0.0.0:5001 --node http://0.0.0.0:8020",
-    "remove-local": "graph remove osmosis-token-swaps --node http://0.0.0.0:8020",
-    "create": "graph create osmosis-token-swaps --node https://api.thegraph.com/deploy/",
-    "deploy": "graph deploy osmosis-token-swaps --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/"
+    "create-local": "graph create red-bank-HF --node http://0.0.0.0:8020",
+    "deploy-local": "graph deploy red-bank-HF -l v0.1.0 --ipfs http://0.0.0.0:5001 --node http://0.0.0.0:8020",
+    "remove-local": "graph remove red-bank-HF --node http://0.0.0.0:8020",
+    "create": "graph create red-bank-HF --node https://api.thegraph.com/deploy/",
+    "deploy": "graph deploy red-bank-HF --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.68.3",
